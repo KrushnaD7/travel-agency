@@ -1,0 +1,861 @@
+body { margin: 0; }
+
+.navbar .container {
+  border-radius: 0;
+}
+
+body {
+  background: #f0f9ff;
+}
+
+/* navbar */
+.navbar {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  background: rgba(0,0,0,0.12); /* lighter */
+  backdrop-filter: blur(5px);
+}
+
+/* hero */
+.hero {
+  height: 100vh;
+  /* position: relative; */
+
+
+
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.65), rgba(0,0,0,0.3)),
+    url('../images/Man_standing_on_202603282232.jpeg_202603292053.jpeg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding-top: 80px;
+}
+
+
+
+/* hero text */
+.hero-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-left: 80px;
+  max-width: 650px;
+
+  /* margin-left: 30px; */
+}
+
+/* navbar links */
+.navbar a {
+  color: white !important;
+  font-size: large;
+  font-weight: 500;
+  margin: 0 5px;
+}
+
+.navbar .navbar-brand {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.navbar-brand i {
+  margin-right: 6px;
+  font-size: 40px;
+}
+
+.wave{
+  color: #f97316;
+}
+
+
+
+.hero-tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff; 
+  text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #f97316;
+}
+
+.hero-desc {
+  margin-top: 15px;
+  color: #ddd;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.hero-btns {
+  margin-top: 30px;
+  gap: 15px;
+  display: flex;
+}
+
+.btn-main {
+  background: #f97316;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: none;
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  margin-left: 10px;
+  background: transparent;
+}
+
+
+
+/* ===== DAY STATS ===== */
+.stats-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+
+  background: rgba(0,0,0,0.22);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 5px 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-n {
+  
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f97316; /* ORANGE */
+}
+
+.stat-l {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 5px;
+}
+
+
+
+
+
+/* ===== SECTION ===== */
+
+
+
+/* ===== DESTINATION SECTION (DAY MODE FIX) ===== */
+.destinations {
+  background: #f0f9ff;
+  padding: 60px 0;
+}
+
+/* heading */
+.destinations h2 {
+  color: #0c2a4a;
+  font-weight: 700;
+}
+
+/* text */
+.destinations p {
+  color: #1e3a5f;
+}
+
+.destinations .text-muted {
+  color: #64748b !important;
+}
+
+/* feature cards */
+.feature-card {
+  background: #ffffff;
+  border: 1px solid rgba(10, 95, 134, 0.1);
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.feature-card h5 {
+  color: #0c2a4a;
+}
+
+.feature-card p {
+  color: #64748b;
+}
+
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 205px;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+/* BASE CARD */
+.dest-grid .card {
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: medium;
+  font-weight: 900;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+
+  
+}
+
+/* OVERLAY */
+.dest-grid .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* TEXT FIX */
+.dest-grid .card span {
+  position: relative;
+  z-index: 2;
+}
+
+
+.japan {
+  grid-column: span 2;
+  background-image: url('../images/dectination/Faroe Islands.png');
+}
+
+.korea {
+  grid-row: span 2;
+  background-image: url('../images/dectination/Dolomites\,\ Italy.png');
+}
+
+.malaysia {
+  grid-row: span 2;
+  background-image: url('../images/dectination/Zhangjiajie\,\ China.png');
+}
+
+.bali {
+  background-image: url('../images/dectination/Iceland.png');
+}
+
+.vietnam {
+  grid-column: span 2;
+  background-image: url('../images/dectination/japan.png');
+  background-size: cover;
+  background-position: top;
+  
+}
+
+
+
+/* =========================
+   SECTION (DAY)
+========================= */
+.popular-section {
+  background: #f0f9ff;
+  padding: 80px 0;
+}
+
+/* HEADINGS (DAY) */
+.small-title {
+  color: #0ea5e9;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.main-title {
+  color: #0c2a4a;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.sub-title {
+  color: #64748b;
+}
+
+/* =========================
+   CARD (DAY)
+========================= */
+.card-custom {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(14,165,233,0.1);
+  margin-top: 8px;
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body h5 {
+  color: #0c2a4a;
+}
+
+/* bottom */
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.price {
+  color: #f97316;
+  font-weight: 600;
+}
+
+.days {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode .popular-section {
+  background: #0d0a1a;
+}
+
+/* HEADINGS (DARK) */
+body.dark-mode .small-title {
+  color: #a78bfa;
+}
+
+body.dark-mode .main-title {
+  color: #ede9fe;
+}
+
+body.dark-mode .sub-title {
+  color: rgba(237,233,254,0.8);
+}
+
+/* CARD (DARK) */
+body.dark-mode .card-custom {
+  background: #1a1030;
+  border: 1px solid rgba(167,139,250,0.12);
+}
+
+body.dark-mode .card-body h5 {
+  color: #ede9fe;
+}
+
+body.dark-mode .price {
+  color: #fbbf24;
+}
+
+body.dark-mode .days {
+  color: #a78bfa;
+}
+
+/* =========================
+   CAROUSEL BUTTONS
+========================= */
+/* =========================
+   FIX CAROUSEL BUTTON POSITION
+========================= */
+
+/* IMPORTANT: allow overflow */
+.popular-section .container {
+  overflow: visible;
+}
+
+/* carousel main */
+#cardCarousel {
+  position: relative;
+  overflow: visible;
+}
+
+/* button base */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 10;
+}
+
+/* move LEFT outside */
+.carousel-control-prev {
+  left: -50px;
+}
+
+/* move RIGHT outside */
+.carousel-control-next {
+  right: -50px;
+}
+
+/* icon color fix */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+
+
+/* SECTION */
+.testi-section {
+  background: #f0f9ff;
+  padding: 80px 0;
+}
+
+/* HEADINGS */
+.small-title {
+  color: #0ea5e9;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.main-title {
+  color: #0c2a4a;
+  font-weight: 700;
+}
+
+/* CARD */
+.testi-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid rgba(14,165,233,0.1);
+}
+
+/* STARS */
+.stars {
+  color: #fbbf24;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.testi-text {
+  color: #1e3a5f;
+  margin-bottom: 15px;
+}
+
+/* USER */
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #0ea5e9;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.user h6 {
+  margin: 0;
+  color: #0c2a4a;
+}
+
+.user span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+
+
+.footer-section {
+  background: #527083;
+  padding: 60px 0;
+}
+
+.logo {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #f97316;
+}
+
+.tagline {
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.footer-section h6 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.footer-section hr {
+  margin: 30px 0;
+  border-color: rgba(0,0,0,0.1);
+}
+
+.copyright {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* hover */
+
+
+.card-custom {
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.card-custom:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.dest-grid .card {
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.dest-grid .card:hover {
+  transform: scale(1.05) !important;
+}
+
+
+.feature-card {
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.testi-card {
+ transition: 0.3s ease;
+}
+
+.testi-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08)!important;
+}
+
+.btn-main,
+.btn-outline {
+  transition: 0.3s ease;
+}
+
+.btn-main:hover {
+  transform: scale(1.05);
+}
+
+.btn-outline:hover {
+  background: white;
+  color: black;
+}
+
+
+body.dark-mode .card-custom:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .feature-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ══ DARK MODE — Aurora Purple + Gold ══ */
+
+body.dark-mode {
+  background: #0d0a1a;
+}
+
+body.dark-mode .navbar {
+  background: rgba(13, 10, 26, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+body.dark-mode .wave {
+  color: #fbbf24;
+}
+
+body.dark-mode .hero {
+  background-image:
+    linear-gradient(to right, rgba(10, 4, 30, 0.78), rgba(25, 8, 55, 0.42)),
+    url('../images/Man_standing_on_202603282232.jpeg_202603292058.jpeg');
+}
+
+body.dark-mode .hero-tag {
+  color: rgba(237, 233, 254, 0.72);
+  letter-spacing: 2px;
+}
+
+body.dark-mode .btn-main {
+  background: #fbbf24;
+  color: #0d0a1a;
+}
+
+body.dark-mode .btn-outline {
+  border: 1px solid #a78bfa;
+  color: #a78bfa;
+}
+
+body.dark-mode .highlight,
+body.dark-mode .wave {
+  color: #fbbf24;
+}
+
+
+/* ===== NIGHT STATS ===== */
+body.dark-mode .stats-bar {
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(20px);
+}
+
+body.dark-mode .stat-n {
+  color: #fbbf24; /* GOLD */
+}
+
+body.dark-mode .stat-l {
+  color: rgba(237,233,254,0.8); /* PURPLE-WHITE */
+}
+
+
+/* ===== SECTION ===== */
+body.dark-mode .destinations {
+  background: #120d26;
+}
+
+/* HEADINGS */
+body.dark-mode .destinations h2 {
+  color: #ede9fe;
+}
+
+/* TEXT */
+body.dark-mode .destinations p {
+  color: #ede9fe;
+}
+
+body.dark-mode .destinations .text-muted {
+  color: #a78bfa !important;
+}
+
+/* ===== FEATURE CARDS ===== */
+body.dark-mode .feature-card {
+  background: #1a1030;
+  border: 1px solid rgba(167,139,250,0.12);
+}
+
+body.dark-mode .feature-card h5 {
+  color: #ede9fe;
+}
+
+body.dark-mode .feature-card p {
+  color: #a78bfa;
+}
+
+/* ===== GRID CARDS ===== */
+body.dark-mode .dest-grid .card {
+  color: #ffffff;
+}
+
+/* OVERLAY (AURORA STYLE) */
+body.dark-mode .dest-grid .card::before {
+  background: linear-gradient(
+    to top,
+    rgba(10,4,30,0.78),
+    rgba(25,8,55,0.42)
+  );
+}
+
+
+
+body.dark-mode .testi-section {
+  background: #120d26;
+}
+
+/* HEADINGS */
+body.dark-mode .small-title {
+  color: #a78bfa;
+}
+
+body.dark-mode .main-title {
+  color: #ede9fe;
+}
+
+/* CARD */
+body.dark-mode .testi-card {
+  background: #1a1030;
+  border: 1px solid rgba(167,139,250,0.12);
+}
+
+/* TEXT */
+body.dark-mode .testi-text {
+  color: #ede9fe;
+}
+
+/* USER */
+body.dark-mode .avatar {
+  background: #a78bfa;
+  color: #0d0a1a;
+}
+
+body.dark-mode .user h6 {
+  color: #ede9fe;
+}
+
+body.dark-mode .user span {
+  color: #a78bfa;
+}
+
+/* STARS */
+body.dark-mode .stars {
+  color: #fbbf24;
+}
+
+
+
+body.dark-mode .footer-section {
+  background: #07040f;
+}
+
+body.dark-mode .logo {
+  color: #ede9fe;
+}
+
+body.dark-mode .logo span {
+  color: #fbbf24;
+}
+
+body.dark-mode .tagline {
+  color: #a78bfa;
+}
+
+body.dark-mode .footer-section h6 {
+  color: #ede9fe;
+}
+
+body.dark-mode .footer-section ul li {
+  color: #a78bfa;
+}
+
+body.dark-mode .footer-section hr {
+  border-color: rgba(167,139,250,0.2);
+}
+
+body.dark-mode .copyright {
+  color: #a78bfa;
+}

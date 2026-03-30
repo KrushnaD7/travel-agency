@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Agency</title>
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg ">
+  <div class="container">
+    <a class="navbar-brand" href="#"> <i class="bi bi-globe-central-south-asia"></i> Wander<span class="wave">Wave</span></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link " href="#">Destinations</a></li>
+        <li class="nav-item"><a class="nav-link " href="#">Packages</a></li>
+        <li class="nav-item"><a class="nav-link " href="#">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link " href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link " href="#">Contact</a></li>
+
+        <li class="toggle nav-item ms-3 d-flex align-items-center gap-2">
+
+  <!-- Emoji -->
+  <span id="themeIcon">🌞</span>
+
+  <!-- Toggle -->
+  <div class="form-check form-switch m-0">
+    <input class="form-check-input" type="checkbox" id="themeToggle">
+  </div>
+
+</li>
+
+        
+        
+      </ul>
+    </div>
+    
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-content">
+    
+    <h1>
+  Where the World <br>
+  <span class="highlight">Becomes Magic</span>
+</h1>
+
+<p class="hero-desc">
+  Discover breathtaking landscapes, vibrant cultures, and unforgettable journeys. 
+  From serene mountains to glowing city nights your next adventure starts here.
+</p>
+
+<div class="hero-btns">
+  <button class="btn-main">Start Your Journey</button>
+  <button class="btn-outline">Explore Packages</button>
+</div>
+
+
+  </div>
+</section>
+
+
+
+<!-- STATS BAR -->
+<div class="stats-bar fade-up-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-3 stat"><div class="stat-n">50+</div><div class="stat-l">Destinations</div></div>
+        <div class="col-3 stat"><div class="stat-n">12K+</div><div class="stat-l">Travelers</div></div>
+        <div class="col-3 stat"><div class="stat-n">8 Yrs</div><div class="stat-l">Experience</div></div>
+        <div class="col-3 stat"><div class="stat-n">98%</div><div class="stat-l">Satisfaction</div></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <section class="destinations py-5">
+  <div class="container">
+    <div class="row">
+
+      <!-- LEFT CONTENT -->
+      <div class="col-lg-4">
+        <h2 class="fw-bold mb-3">Top Destinations with WanderWave</h2>
+        <p class="text-muted mb-4">
+          We don't sell trips. We engineer moments that stay with you for a lifetime with every detail handled by passionate travel experts.
+        </p>
+
+        <!-- Feature Cards -->
+        <div class="feature-card mb-3" data-aos="fade-up-right" data-aos-delay="200">
+          <h5><i class="bi bi-gem"></i>  Premium Packages</h5>
+          <p>Luxury stays, business-class flights and curated experiences — bundled at one transparent price with zero hidden costs.</p>
+        </div>
+
+        <div class="feature-card mb-3" data-aos="fade-up-right" data-aos-delay="200">
+          <h5><i class="bi bi-people-fill"></i>  Expert Local Guides</h5>
+          <p>Every destination has a local expert who knows the hidden waterfall, the secret viewpoint, the restaurant with no sign on the door.</p>
+        </div>
+
+        <div class="feature-card mb-3" data-aos="fade-up-right" data-aos-delay="200">
+          <h5><i class="bi bi-person-badge"></i> Full Travel Protection</h5>
+          <p>Comprehensive insurance and 24/7 real-human support. If anything changes, we handle it so you never travel anxious.</p>
+        </div>
+
+        
+      </div>
+
+      <!-- RIGHT GRID -->
+      <div class="col-lg-8">
+  <div class="dest-grid">
+
+    <div class="card japan" data-aos="fade-right" data-aos-delay="200"><span>Faroe Islands →</span></div>
+    <div class="card korea" data-aos="fade-down" data-aos-delay="200"><span>Dolomites, Italy →</span></div>
+    <div class="card malaysia" data-aos="fade-up" data-aos-delay="200"><span>Zhangjiajie, China →</span></div>
+    <div class="card bali" data-aos="flip-up" data-aos-delay="200"><span>Iceland →</span></div>
+    <div class="card vietnam" data-aos="fade-left" data-aos-delay="200"><span>japan →</span></div>
+
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="popular-section py-5">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <p class="small-title">TOP PICKS</p>
+      <h2 class="main-title">Popular Destinations</h2>
+      <p class="sub-title">
+        From Nordic wilderness to tropical shores — every journey begins with one click
+      </p>
+    </div>
+
+    <!-- Carousel -->
+    <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
+      
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-custom">
+                <img src="../images/Popular/d1.png" class="card-img">
+                <div class="card-body">
+                  <h5>Kyoto — Temple & Nature Retreat</h5>
+                  <div class="card-bottom">
+                    <span class="price">from $1,499</span>
+                    <span class="days">6 Days • 5 Nights</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-custom" >
+                <img src="../images/Popular/d2.png" class="card-img">
+                <div class="card-body">
+                  <h5>Iceland — Northern Lights Trail</h5>
+                  <div class="card-bottom">
+                    <span class="price">from $2,199</span>
+                    <span class="days">7 Days • 6 Nights</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-custom">
+                <img src="../images/Popular/d3.png" class="card-img">
+                <div class="card-body">
+                  <h5>Faroe Islands — Hidden Nordic Beauty</h5>
+                  <div class="card-bottom">
+                    <span class="price">from $1,699</span>
+                    <span class="days">6 Days • 7 Nights</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-custom">
+                <img src="../images/Popular/d4.png" class="card-img">
+                <div class="card-body">
+                  <h5>Santorini — Sunset Paradise</h5>
+                  <div class="card-bottom">
+                    <span class="price">from $1,499</span>
+                    <span class="days">6 Days • 5 Nights</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-custom">
+                <img src="../images/Popular/d5.png" class="card-img">
+                <div class="card-body">
+                  <h5>Dolomites — Alpine Escape</h5>
+                  <div class="card-bottom">
+                    <span class="price">from $1,699</span>
+                    <span class="days">6 Days • 5 Nights</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-custom">
+                <img src="../images/Popular/d6.png" class="card-img">
+                <div class="card-body">
+                  <h5>Zhangjiajie — Avatar Mountains</h5>
+                  <div class="card-bottom">
+                    <span class="price">from $1,700</span>
+                    <span class="days">9 Days • 8 Nights</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="testi-section">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <p class="small-title">TRAVELER STORIES</p>
+      <h2 class="main-title">What Our Guests Say</h2>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">
+            “POV: you go to Iceland for vibes and suddenly the sky starts doing RGB lighting. I was just standing there like an NPC. 10/10 trip, no bugs, devs did a great job.”
+          </p>
+
+          <div class="user">
+            <div class="avatar">SB</div>
+            <div>
+              <h6>Swastik Bankar</h6>
+              <span>Mumbai, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">
+            “Japan was so clean I felt like I was the problem. Everything was smooth like butter—no lag, no confusion, just straight premium gameplay.”
+          </p>
+
+          <div class="user">
+            <div class="avatar">AM</div>
+            <div>
+              <h6>Aisha Mehta</h6>
+              <span>Delhi, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="testi-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">
+            “Bro I booked Bali and unlocked main character energy instantly. No stress, no planning, just spawn → explore → eat → repeat. Actually insane experience.”
+          </p>
+
+          <div class="user">
+            <div class="avatar">RS</div>
+            <div>
+              <h6>Kunal Borse</h6>
+              <span>Ahmedabad, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footer-section">
+  <div class="container">
+
+    <div class="row">
+
+      <!-- LEFT -->
+      <div class="col-md-3">
+        <h3 class="logo">Wander<span>Wave</span></h3>
+        <p class="tagline">
+          Crafting unforgettable journeys since 2016.
+        </p>
+      </div>
+
+      <!-- EXPLORE -->
+      <div class="col-md-2">
+        <h6>EXPLORE</h6>
+        <ul>
+          <li>Destinations</li>
+          <li>Packages</li>
+          <li>Gallery</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="col-md-2">
+        <h6>COMPANY</h6>
+        <ul>
+          <li>About Us</li>
+          <li>Our Team</li>
+          <li>Careers</li>
+          <li>Press</li>
+        </ul>
+      </div>
+
+      <!-- SUPPORT -->
+      <div class="col-md-2">
+        <h6>SUPPORT</h6>
+        <ul>
+          <li>Contact</li>
+          <li>FAQ</li>
+          <li>Privacy</li>
+          <li>Terms</li>
+        </ul>
+      </div>
+
+      <!-- FOLLOW -->
+      <div class="col-md-3">
+        <h6>FOLLOW</h6>
+        <ul>
+          <li>Instagram</li>
+          <li>YouTube</li>
+          <li>Facebook</li>
+          <li>Twitter</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+      © 2025 WanderWave Travel Agency. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
+
+
+
+<!--Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/toggle.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+
+</body>
+</html>
