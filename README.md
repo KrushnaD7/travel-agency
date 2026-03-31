@@ -95,9 +95,27 @@ cd wanderwave
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-(Add screenshots here later)
+### Home Page
+![Home](images/ss/image.png)
+
+
+
+### Destinations & Packages Page
+![About](images/ss/2.png)
+
+### Gallery Page
+
+![About](images/ss/3.png)
+
+
+### About Page
+![About](images/ss/4.png)
+
+
+### Contact Page
+![About](images/ss/5.png)
 
 ---
 

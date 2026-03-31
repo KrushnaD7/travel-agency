@@ -1434,7 +1434,7 @@ body.dark-mode .role {
    CONTACT SECTION
 ========================= */
 .contact {
-  background: #f8fafc;
+  background: #ffffff;
   padding: 60px 0;
 }
 
@@ -1510,37 +1510,5 @@ body.dark-mode .role {
 ========================= */
 .contact iframe {
   border-radius: 16px;
-}
-
-/* =========================
-   DARK MODE
-========================= */
-body.dark-mode .contact {
-  background: #fbfaff;
-}
-
-/* LEFT TEXT */
-body.dark-mode .contact h2,
-body.dark-mode .contact h6 {
-  color: #ffffff;
-}
-
-body.dark-mode .contact p {
-  color: rgba(255,255,255,0.7);
-}
-
-/* ICON */
-body.dark-mode .text-purple {
-  color: #38bdf8;
-}
-
-/* FORM */
-body.dark-mode .contact .card {
-  background: #1a1030;
-}
-
-/* FORM TITLE */
-body.dark-mode .contact .card h4 {
-  color: #ffffff;
 }
 
