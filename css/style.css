@@ -3,26 +3,55 @@ body { margin: 0; }
 .navbar .container {
   border-radius: 0;
 }
-
+body {
+  padding-top: 70px;
+}
 body {
   background: #f0f9ff;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* navbar */
 .navbar {
-  position: absolute;
-  top: 0px;
+  position: fixed;
+  top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.12); /* lighter */
-  backdrop-filter: blur(5px);
+  z-index: 1000;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  padding: 0;
 }
 
 /* hero */
 .hero {
-  height: 100vh;
-  /* position: relative; */
+  position: relative;
+  height: calc(100vh - 70px); /* accounts for fixed navbar */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
 
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
   background-image:
     linear-gradient(to right, rgba(0,0,0,0.65), rgba(0,0,0,0.3)),
@@ -30,9 +59,31 @@ body {
 
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 
-  padding-top: 80px;
+  z-index: 0;
+  animation: heroZoom 20s ease-in-out infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .stats-bar {
+    position: relative;
+    /* margin-top: 0px; */
+  }
 }
 
 
@@ -51,6 +102,31 @@ body {
 }
 
 /* navbar links */
+
+
+
+/* ACTIVE NAV LINK */
+.navbar .nav-link.active {
+  color: #f97316 !important;
+  font-weight: 600;
+  position: relative;
+  text-shadow: 0 0 10px rgba(249,115,22,0.6);
+}
+
+/* underline */
+.navbar .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: #f97316;
+}
+
+
+
+
 .navbar a {
   color: white !important;
   font-size: large;
@@ -138,7 +214,8 @@ body {
   background: rgba(0,0,0,0.22);
   backdrop-filter: blur(8px);
   border-top: 1px solid rgba(255,255,255,0.08);
-  padding: 5px 0;
+  padding: 0;
+  margin: -2px 0 0 0;
 }
 
 .stat {
@@ -204,71 +281,91 @@ body {
 }
 
 
+/* GRID */
 .dest-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 205px;
-  gap: 15px;
-  margin-top: 5px;
+  grid-auto-rows: 200px;
+  gap: 20px;
 }
 
-/* BASE CARD */
-.dest-grid .card {
+/* GRID ITEM (IMPORTANT) */
+.grid-item {
+  position: relative;
+  overflow: visible;
+}
+
+/* CARD */
+.grid-item .card {
+  height: 100%;
+  width: 100%;
   border-radius: 20px;
-  color: #ffffff;
-  font-size: medium;
-  font-weight: 900;
   display: flex;
   align-items: flex-end;
-  padding: 20px;
+  padding: 15px;
+  color: #fff;
+  font-weight: 700;
   background-size: cover;
   background-position: center;
   position: relative;
-  overflow: hidden;
-
-  
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* OVERLAY */
-.dest-grid .card::before {
+.grid-item .card::before {
   content: "";
   position: absolute;
   inset: 0;
+  border-radius: 20px;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  pointer-events: none;
 }
 
-/* TEXT FIX */
-.dest-grid .card span {
+/* TEXT */
+.grid-item .card span {
   position: relative;
   z-index: 2;
 }
 
+/* HOVER (FULL CARD SCALE) */
+.grid-item:hover .card {
+  transform: scale(1.06);
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* ===== GRID SIZES + IMAGES ===== */
 
 .japan {
   grid-column: span 2;
+}
+.japan .card {
   background-image: url('../images/dectination/Faroe Islands.png');
 }
 
 .korea {
   grid-row: span 2;
-  background-image: url('../images/dectination/Dolomites\,\ Italy.png');
+}
+.korea .card {
+  background-image: url('../images/dectination/Dolomites, Italy.png');
 }
 
 .malaysia {
   grid-row: span 2;
-  background-image: url('../images/dectination/Zhangjiajie\,\ China.png');
+}
+.malaysia .card {
+  background-image: url('../images/dectination/Zhangjiajie, China.png');
 }
 
-.bali {
+.bali .card {
   background-image: url('../images/dectination/Iceland.png');
 }
 
 .vietnam {
   grid-column: span 2;
+}
+.vietnam .card {
   background-image: url('../images/dectination/japan.png');
-  background-size: cover;
-  background-position: top;
-  
 }
 
 
@@ -391,43 +488,32 @@ body.dark-mode .days {
   overflow: visible;
 }
 
-/* carousel main */
-#cardCarousel {
-  position: relative;
-  overflow: visible;
-}
-
-/* button base */
-.carousel-control-prev,
-.carousel-control-next {
+#cardCarousel .carousel-control-prev,
+#cardCarousel .carousel-control-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 50px;
-  height: 50px;
-  background: #ffffff;
+  background: transparent;
   border-radius: 50%;
   opacity: 1;
   z-index: 10;
 }
 
-/* move LEFT outside */
-.carousel-control-prev {
+/* move only for homepage carousel */
+#cardCarousel .carousel-control-prev {
   left: -50px;
 }
 
-/* move RIGHT outside */
-.carousel-control-next {
+#cardCarousel .carousel-control-next {
   right: -50px;
 }
 
-/* icon color fix */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
+/* icon fix */
+#cardCarousel .carousel-control-prev-icon,
+#cardCarousel .carousel-control-next-icon {
   filter: invert(1);
 }
-
-
 
 /* SECTION */
 .testi-section {
@@ -552,6 +638,31 @@ body.dark-mode .days {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* hover */
 
 
@@ -566,12 +677,18 @@ body.dark-mode .days {
 }
 
 .dest-grid .card {
-  transition: transform 0.4s ease;
-  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .dest-grid .card:hover {
-  transform: scale(1.05) !important;
+  transform: scale(1.05);
+  z-index: 10; /* 🔥 KEY FIX */
+}
+.dest-grid .card:hover {
+  transform: scale(1.05);
+  z-index: 10; /* 🔥 KEY FIX */
 }
 
 
@@ -621,6 +738,34 @@ body.dark-mode .feature-card:hover {
 
 
 
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+  .hero-content {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .col-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 
 
 
@@ -688,13 +833,22 @@ body.dark-mode .navbar {
   -webkit-backdrop-filter: blur(14px);
 }
 
+body.dark-mode .navbar .nav-link.active {
+  color: #fbbf24 !important;
+  text-shadow: 0 0 10px rgba(251,191,36,0.6);
+}
+
+body.dark-mode .navbar .nav-link.active::after {
+  background: #fbbf24;
+}
+
 body.dark-mode .wave {
   color: #fbbf24;
 }
 
-body.dark-mode .hero {
+body.dark-mode .hero::before {
   background-image:
-    linear-gradient(to right, rgba(10, 4, 30, 0.78), rgba(25, 8, 55, 0.42)),
+    linear-gradient(to right, rgba(10,4,30,0.78), rgba(25,8,55,0.42)),
     url('../images/Man_standing_on_202603282232.jpeg_202603292058.jpeg');
 }
 
@@ -858,4 +1012,455 @@ body.dark-mode .footer-section hr {
 
 body.dark-mode .copyright {
   color: #a78bfa;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* dAndp */
+
+/* ===== DESTINATION BLOCK (DAY) ===== */
+.destination-block {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* LEFT TEXT */
+.dest-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0c2a4a;
+}
+
+.dest-tag {
+  font-style: italic;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.dest-desc {
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* CARD FIX (ensure clean look) */
+.card-custom {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(14,165,233,0.1);
+}
+
+/* LINKS */
+.card-bottom a {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+/* ===== DESTINATION BLOCK (DARK) ===== */
+body.dark-mode .destination-block {
+  background: #0d0a1a;
+  border-top: 1px solid rgba(167,139,250,0.15);
+}
+
+/* TEXT */
+body.dark-mode .dest-title {
+  color: #ede9fe;
+}
+
+body.dark-mode .dest-tag {
+  color: #a78bfa;
+}
+
+body.dark-mode .dest-desc {
+  color: rgba(237,233,254,0.85);
+}
+
+/* CARD */
+body.dark-mode .card-custom {
+  background: #1a1030;
+  border: 1px solid rgba(167,139,250,0.15);
+}
+
+/* CARD TEXT */
+body.dark-mode .card-body h5 {
+  color: #ede9fe;
+}
+
+body.dark-mode .card-body p {
+  color: rgba(237,233,254,0.75);
+}
+
+/* PRICE */
+body.dark-mode .price {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+/* VIEW DETAILS LINK */
+body.dark-mode .card-bottom a {
+  color: #a78bfa;
+}
+
+body.dark-mode .card-bottom a:hover {
+  color: #fbbf24;
+}
+
+
+
+
+
+
+
+
+/* gallery */
+
+/* center modal nicely */
+.modal-dialog {
+  max-width: 900px;
+}
+
+/* remove white box */
+.modal-content {
+  background: transparent;
+  border: none;
+}
+
+/* spacing */
+.modal-body {
+  padding: 0;
+}
+
+/* image fit */
+.modal-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.gallery .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.gallery-masonry {
+  column-count: 4;
+  column-gap: 15px;
+  width: 100%;
+}
+
+.gallery-masonry a {
+  display: inline-block;
+  width: 100%;
+  margin-top: 12%;
+}
+
+
+
+
+
+
+
+
+./* =========================
+   ABOUT SECTION
+========================= */
+.about {
+  background: #f8fafc;
+  padding: 60px 0;
+}
+
+.about-label {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.about-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #9333ea;
+  line-height: 1.5;
+}
+
+.about-desc {
+  color: #475569;
+  margin-top: 18px;
+  line-height: 1.7;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+
+/* =========================
+   MISSION
+========================= */
+.mission {
+  background: #ede9fe;
+  border-radius: 16px;
+  padding: 40px;
+  margin: 60px 0;
+  text-align: center;
+}
+
+.mission-title {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #64748b;
+}
+
+.mission-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0c2a4a;
+  margin-top: 10px;
+}
+
+
+/* =========================
+   TEAM SECTION
+========================= */
+.team {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.team-sub {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+/* LEFT MAIN CARD */
+.team-main {
+  background: #f8fafc;
+  padding: 5px;
+  border-radius: 16px;
+  height: 100%;
+  margin-left: 50%;
+}
+
+.team-main img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.team-main h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #0c2a4a;
+}
+
+/* ROLE */
+.role {
+  color: #9333ea;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* RIGHT CARDS */
+.team-card {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.team-card:hover {
+  background: #f1f5f9;
+}
+
+.team-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.team-card h5 {
+  margin: 0;
+  font-size: 18px;
+  color: #0c2a4a;
+}
+
+.team-card p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+body.dark-mode .about {
+  background: #0d0a1a;
+}
+
+body.dark-mode .about-title {
+  color: #c084fc;
+}
+
+body.dark-mode .about-label {
+  color: #a78bfa;
+}
+
+body.dark-mode .about-desc {
+  color: rgba(237,233,254,0.85);
+}
+
+body.dark-mode .about-img {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* mission */
+body.dark-mode .mission {
+  background: #1a1030;
+}
+
+body.dark-mode .mission-title {
+  color: #a78bfa;
+}
+
+body.dark-mode .mission-text {
+  color: #ede9fe;
+}
+
+/* team */
+body.dark-mode .team {
+  background: #0d0a1a;
+}
+
+body.dark-mode .team-main {
+  background: #1a1030;
+}
+
+body.dark-mode .team-main h4 {
+  color: #ede9fe;
+}
+
+body.dark-mode .team-sub {
+  color: rgba(237,233,254,0.7);
+}
+
+body.dark-mode .team-card:hover {
+  background: #1a1030;
+}
+
+body.dark-mode .team-card h5 {
+  color: #ede9fe;
+}
+
+body.dark-mode .team-card p {
+  color: rgba(237,233,254,0.75);
+}
+
+body.dark-mode .role {
+  color: #a78bfa;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 24px;
+  }
+
+  .mission-text {
+    font-size: 18px;
+  }
+
+  .team-main {
+    margin-bottom: 30px;
+    margin-left: 0;
+  }
+
+  .team-main img {
+    height: 300px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* purple color */
+.text-purple {
+  color: #339bea;
+}
+
+/* better form look */
+.form-control {
+  border-radius: 8px;
+}
+
+/* button gradient */
+.btn-primary {
+  background: linear-gradient(135deg, #55a3f7, #338cea);
+  border: none;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+
+body.dark-mode .bg-light {
+  background: #1a1030 !important;
+}
+
+body.dark-mode .form-control {
+  background: #272045ab;
+  color: #fff;
+  border: 1px solid rgba(167,139,250,0.2);
+}
+
+body.dark-mode .form-control::placeholder {
+  color: rgba(255, 253, 253, 0.6);
 }
