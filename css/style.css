@@ -1430,37 +1430,117 @@ body.dark-mode .role {
 
 
 
-/* purple color */
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact {
+  background: #f8fafc;
+  padding: 60px 0;
+}
+
+/* TITLE */
+.contact h2 {
+  font-weight: 700;
+  color: #0c2a4a;
+}
+
+/* LEFT INFO */
+.contact .d-flex {
+  align-items: flex-start;
+}
+
+.contact h6 {
+  margin: 0;
+  font-weight: 600;
+  color: #0c2a4a;
+}
+
+.contact p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ICON */
 .text-purple {
-  color: #339bea;
+  color: #9333ea;
 }
 
-/* better form look */
+/* =========================
+   FORM CARD
+========================= */
+.contact .card {
+  border-radius: 16px;
+  background: #ede9fe;
+}
+
+/* FORM TITLE */
+.contact .card h4 {
+  font-weight: 600;
+  color: #0c2a4a;
+}
+
+/* INPUTS */
 .form-control {
-  border-radius: 8px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 10px;
 }
 
-/* button gradient */
+.form-control:focus {
+  border-color: #9333ea;
+  box-shadow: 0 0 0 0.2rem rgba(147,51,234,0.2);
+}
+
+/* BUTTON */
 .btn-primary {
-  background: linear-gradient(135deg, #55a3f7, #338cea);
+  background: linear-gradient(135deg, #a855f7, #9333ea);
   border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 500;
 }
 
 .btn-primary:hover {
   opacity: 0.9;
 }
 
-
-body.dark-mode .bg-light {
-  background: #1a1030 !important;
+/* =========================
+   MAP
+========================= */
+.contact iframe {
+  border-radius: 16px;
 }
 
-body.dark-mode .form-control {
-  background: #272045ab;
-  color: #fff;
-  border: 1px solid rgba(167,139,250,0.2);
+/* =========================
+   DARK MODE
+========================= */
+body.dark-mode .contact {
+  background: #fbfaff;
 }
 
-body.dark-mode .form-control::placeholder {
-  color: rgba(255, 253, 253, 0.6);
+/* LEFT TEXT */
+body.dark-mode .contact h2,
+body.dark-mode .contact h6 {
+  color: #ffffff;
 }
+
+body.dark-mode .contact p {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ICON */
+body.dark-mode .text-purple {
+  color: #38bdf8;
+}
+
+/* FORM */
+body.dark-mode .contact .card {
+  background: #1a1030;
+}
+
+/* FORM TITLE */
+body.dark-mode .contact .card h4 {
+  color: #ffffff;
+}
+
