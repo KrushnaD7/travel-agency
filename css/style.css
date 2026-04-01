@@ -1143,46 +1143,50 @@ body.dark-mode .card-bottom a:hover {
 
 
 
-/* gallery */
+/* ===== GALLERY ===== */
 
-/* center modal nicely */
+/* modal */
 .modal-dialog {
   max-width: 900px;
 }
 
-/* remove white box */
 .modal-content {
   background: transparent;
   border: none;
 }
 
-/* spacing */
 .modal-body {
   padding: 0;
 }
 
-/* image fit */
 .modal-body img {
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
+/* container fix */
 .gallery .container {
   padding-left: 0;
   padding-right: 0;
 }
 
+/* masonry layout */
 .gallery-masonry {
   column-count: 4;
   column-gap: 15px;
-  width: 100%;
 }
 
+/* images */
 .gallery-masonry a {
   display: inline-block;
   width: 100%;
-  margin-top: 12%;
+  margin-bottom: 15px;
+}
+
+.gallery-masonry img {
+  width: 100%;
+  border-radius: 10px;
 }
 
 
