@@ -1,36 +1,36 @@
-# 🌍 WanderWave – Travel Agency Website
+#  WanderWave – Travel Agency Website
 
 A modern, responsive travel agency website built using **HTML, CSS, Bootstrap, and JavaScript**.
 Designed with a clean UI, dark mode support, and smooth user experience.
 
 ---
 
-## 🚀 Live Demo
+##  Live Demo
 
-👉 https://travel-agency-two-opal.vercel.app/
+ https://travel-agency-two-opal.vercel.app/
 
 ---
 
-## 📌 Features
+##  Features
 
-* 🌐 Fully responsive design (mobile + desktop)
-* 🌙 Dark / Light mode toggle (with localStorage)
-* 🧭 Multi-page website:
+*  Fully responsive design (mobile + desktop)
+*  Dark / Light mode toggle (with localStorage)
+*  Multi-page website:
 
   * Home
   * Destinations & Packages
   * Gallery (Lightbox enabled)
   * About
   * Contact
-* 🖼️ Image gallery with lightbox + navigation
-* 🎯 Smooth animations using AOS
-* 📍 Google Maps integration
-* 📬 Contact form UI
-* 🎨 Clean and modern UI design
+*  Image gallery with lightbox + navigation
+*  Smooth animations using AOS
+*  Google Maps integration
+*  Contact form UI
+*  Clean and modern UI design
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * HTML5
 * CSS3
@@ -41,7 +41,7 @@ Designed with a clean UI, dark mode support, and smooth user experience.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 travel-agency/
@@ -119,7 +119,7 @@ cd wanderwave
 
 ---
 
-## 📈 Future Improvements
+##  Future Improvements
 
 * Form validation + backend integration
 * Booking system
@@ -129,13 +129,13 @@ cd wanderwave
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 Krushna Dodke
 
 ---
 
-## ⭐ Show Your Support
+##  Show Your Support
 
 If you like this project, give it a ⭐ on GitHub!
 
